@@ -64,6 +64,6 @@ mod tests_ignore {
 
     #[test]
     #[ignore]
-    fn expensive_test() {// code that takes an hour to run
+    fn expensive_test() { // code that takes an hour to run
     }
 }
