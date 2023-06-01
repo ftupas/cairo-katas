@@ -11,8 +11,8 @@ fn largest_list<T, impl TDrop: Drop<T>>(l1: Array<T>, l2: Array<T>) -> Array<T> 
 }
 
 fn main() {
-    let mut l1 = ArrayTrait::new();
-    let mut l2 = ArrayTrait::new();
+    let mut l1 = Default::default();
+    let mut l2 = Default::default();
 
     l1.append(1);
     l1.append(2);
