@@ -12,11 +12,11 @@ trait GuessTrait {
 impl GuessImpl of GuessTrait {
     fn new(value: u64) -> Guess {
         if value < 1 {
-            let mut data = ArrayTrait::new();
+            let mut data = Default::default();
             data.append('Guess must be >= 1');
             panic(data);
         } else if value > 100 {
-            let mut data = ArrayTrait::new();
+            let mut data = Default::default();
             data.append('Guess must be <= 100');
             panic(data);
         }

@@ -26,7 +26,7 @@ fn smallest_element<T, impl TPartialOrd: PartialOrd<T>, impl TCopy: Copy<T>, imp
 }
 
 fn main() {
-    let mut list = ArrayTrait::new();
+    let mut list = Default::default();
     list.append(5_u8);
     list.append(3_u8);
     list.append(10_u8);
