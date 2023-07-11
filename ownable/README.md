@@ -1,4 +1,4 @@
-# ERC20
+# Ownable
 
 ## Test
 
