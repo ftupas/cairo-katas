@@ -1,6 +1,4 @@
 use array::ArrayTrait;
-use debug::PrintTrait;
-use clone::Clone;
 use erc20::{ERC20, IERC20Dispatcher, IERC20DispatcherTrait};
 use integer::BoundedInt;
 use integer::u256;
