@@ -1,4 +1,4 @@
-fn internal_adder(a: u32, b: u32) -> u32 {
+fn internal_adder(a: u256, b: u256) -> u256 {
     a + b
 }
 
@@ -9,10 +9,18 @@ fn internal_adder(a: u32, b: u32) -> u32 {
 #[cfg(test)]
 mod tests {
     use super::internal_adder;
+    use integer::{BoundedInt, BoundedU256};
     #[test]
     fn it_works() {
         let result = internal_adder(2, 2);
         assert(result == 4, 'result is not 4');
+    }
+
+    #[test]
+    #[should_panic(expected: ('u256_add Overflow',))]
+    fn it_overflows() {
+        let result = internal_adder(BoundedU256::max(), BoundedU256::max());
+        assert(result == 6, 'result is not 6');
     }
 }
 
@@ -30,7 +38,7 @@ mod tests1 {
 mod tests2 {
     use super::internal_adder;
     #[test]
-    #[should_panic(expected: ('Make this test fail', ))]
+    #[should_panic(expected: ('Make this test fail',))]
     fn another() {
         let result = internal_adder(2, 2);
         assert(result == 6, 'Make this test fail');
