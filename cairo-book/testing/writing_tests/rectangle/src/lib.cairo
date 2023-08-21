@@ -16,7 +16,7 @@ impl RectangleImpl of RectangleTrait {
         *self.width * *self.height
     }
     fn can_hold(self: @Rectangle, other: @Rectangle) -> bool {
-        *self.width > *other.width & *self.height > *other.height
+        *self.width > *other.width && *self.height > *other.height
     }
 }
 
